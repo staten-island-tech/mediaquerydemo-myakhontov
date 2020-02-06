@@ -9,6 +9,7 @@ $colors: (
 $desktop: 1100px;
 $laptop: 900px;
 $tablet: 600px;
+$phone: 350px;
 
 @function color($color-name) {
   @return map-get($colors, $color-name);
@@ -28,6 +29,12 @@ $tablet: 600px;
 
 @mixin tablet{
   @media(min-width: #{$tablet}){
+    @content;
+  }
+}
+
+@mixin phone{
+  @media(min-width: #{$phone}){
     @content;
   }
 }
